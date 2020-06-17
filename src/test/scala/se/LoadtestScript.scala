@@ -1,12 +1,12 @@
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import io.gatling.http.Predef._
+
 import scala.concurrent.duration._
 
 class LoadtestScript extends Simulation {
 
-  val httpConf =
-     http
+  val httpConf = http
     .baseUrl("http://computer-database.gatling.io")
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     .acceptEncodingHeader("gzip, deflate")
