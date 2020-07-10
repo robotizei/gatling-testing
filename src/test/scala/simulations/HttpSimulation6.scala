@@ -58,7 +58,7 @@ class HttpSimulation6 extends Simulation {
      * If this is not the case when the simulation runs, the simulation will considered to have failed.
      */
     .assertions(
-      global.responseTime.max.lte(500),
+      global.responseTime.max.lte(1000),
       forAll.failedRequests.count.lte(5),
       details("Bad Request").successfulRequests.percent.gte(90)
     )

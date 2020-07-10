@@ -30,7 +30,7 @@ class ExampleWithTokenOAuth extends Simulation {
   before {
     println("***** My simulation is about to begin! *****")
     if (token.isEmpty) {
-      token = tokenGenerate.getToken()
+//      token = tokenGenerate.getToken()
       print(token)
     }
   }
