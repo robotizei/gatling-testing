@@ -1,3 +1,5 @@
+package simulations
+
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import io.gatling.http.Predef._
@@ -17,13 +19,13 @@ class LoadtestScript extends Simulation {
     .exec(http("Filter computers")
       .get("/computers")
       .formParam("f", "Macbook"))
-    .pause(200 milliseconds, 1000 milliseconds)
+    .pause(Duration(200, MILLISECONDS), Duration(1000, MILLISECONDS))
     .exec(http("Look at a Macbook")
       .get("/computers/473"))
 
   setUp(
     computerDatabaseScenario.inject(
-      constantUsersPerSec(30) during (10 seconds)
+      constantUsersPerSec(30) during (Duration(10, SECONDS))
     ).protocols(httpConf)
   )
 }
