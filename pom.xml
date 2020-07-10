@@ -6,17 +6,18 @@
 
     <groupId>exaple-teste-carga</groupId>
     <artifactId>teste.carga.br</artifactId>
-    <version>3.3.1</version>
+    <version>1.0.0</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gatling.version>${project.version}</gatling.version>
+        <gatling.version>3.3.1</gatling.version>
         <gatling-plugin.version>3.0.5</gatling-plugin.version>
         <gatling-maven-plugin.version>3.0.5</gatling-maven-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <scala-maven-plugin.version>4.3.1</scala-maven-plugin.version>
+        <frontline-maven-plugin.version>1.0.3</frontline-maven-plugin.version>
         <httpclient.version>4.5.12</httpclient.version>
         <scala-library.version>2.12.8</scala-library.version>
     </properties>
@@ -57,14 +58,14 @@
             <plugin>
                 <!-- so that maven can create a jar -->
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>${maven-jar-plugin.version}</version>
             </plugin>
 
             <!-- this plugin is so maven can compile your scala code -->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.3.1</version>
+                <version>${scala-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -92,7 +93,7 @@
             <plugin>
                 <groupId>io.gatling.frontline</groupId>
                 <artifactId>frontline-maven-plugin</artifactId>
-                <version>1.0.3</version>
+                <version>${frontline-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
