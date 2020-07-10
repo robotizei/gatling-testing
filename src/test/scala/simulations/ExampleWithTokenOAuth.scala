@@ -15,10 +15,10 @@ import io.gatling.http.request.builder.HttpRequestBuilder.toActionBuilder
  *
  * @author Ivan Krizsan
  */
-class HttpSimulation1 extends Simulation {
+class ExampleWithTokenOAuth extends Simulation {
 
   val tokenGenerate: TokenGenerate = new TokenGenerate
-
+  var token = ""
   /*
    * A HTTP protocol builder is used to specify common properties of request(s) to be sent,
    * for instance the base URL, HTTP headers that are to be enclosed with all requests etc.
@@ -52,7 +52,7 @@ class HttpSimulation1 extends Simulation {
       http("myRequest1")
         .get("/")
     )
-  var token = ""
+
 
   /*
    * Define the load simulation.
